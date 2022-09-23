@@ -45,7 +45,7 @@ Solusi yang dapat dilakukan agar tujuan terpenuhi adalah :
   
 - Berikut adalah algoritma yang digunakan pada proyek ini :
   - K-Neares Neighbors
-  - Gradient Boostring Regression
+  - Gradient Boosting Regression
   - Random Forest Regression
 
 - Menggunakan Hyperparameter dan GridSearch juga membantu kita untuk menemukan sebuah parameter terbaik yang dapat digunakan pada suatu model
@@ -65,18 +65,51 @@ missing value dan berikut adalah penjelasan dari setiap kolom yang tersedia :
   - Adj Close : Harga penutupan pada hari tersebut setelah disesuaikan
   - Volume : Volume transaksi yang terjadi pada tanggal perdagangan berlangsung
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+## Exploratory Data Analysis
+Sebelum melakukan pemrosesan pada sebuah data, kita bisa mengeksplor data tersebut untuk mencari sebuah kolerasi antara data, mencari outlier, dan melakukan analisis
+Univariate Analysis dan Multivariate Analysis
+
+- Menangani Outlier
+<br>Berikut adalah data numerik jika divisualisasikan, hanya Volume yang memiliki outlier.
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/iqr1.png" width=600/>
+ Dan berikut adalah data numerik jika divisualisasikan, jika sudah menggunakan metode IQR yaitu dengan menghapus data yang berada diluar IQR yaitu antara 35% dan 85%. Setelah menggunakan metode tersebut, didapatkan sampel data sebanyak 4123 dan 6 kolom dan berikut adalah gambarnya.
+<br>
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/iqr2.png" width=600/>
+<br>
+
+- Univariate Analysis
+<br>Fitur yang akan diprediksi pada kasus ini terfokus kepada fitur 'Close','High','Open','Close'
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/unvariate.png" width=600 />
+<br>
+
+- Multivariate Analysis
+<br>Dapat kita simpulkan bahwa fitur 'Close' memiliki terkaitan antara fitur 'Open', 'Low', 'High', dan juga 'Adj Close' namun tidak dengan fitur 'Volume'
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/multivariate.png" width=600/>
+<br>
+
+- Colleration Matrix
+<br>Untuk melihat kolerasi antara data kita dapat memvisualisasikan menggunakan heatmap, dapat kita lihat semua data memiliki korelasi antara lain kecuali dengan volume
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/correlecation.png" width=600/>
+<br>
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Berikut ini adalah tahapan dalam menyiapkan data sebelum melakukan modeling :
+### Melakukan Penangan Missing Value
+Pada kasus saya, saya tidak memiliki missing value, namun kita dapat mengatasi missing value ini dengan menghapus value tersebut
+
+### Membagi Dataset
+Kita bisa membagi dataset menjadi dua yaitu train data dan test data, train data digunakan sebagai training model dan test data digunakan sebagai validasi apakah model tersebut sudah akurat atau belum akurat. Rasio yang saya gunakan pada proyek ini adalah 8:2, 8 adalah train data dan 2 adalah test data. Dengan pembagian tersebut didapatkan jumlah sampel train data yaitu 3298 sampel dan sampel test data yaitu 825 sampel dengan total data yang digunakan adalah 4123. Untuk melakukan splitting data kita bisa menggunakan library train_test_split dari scikit-learn.
+
+### Menghapus atau Mengdrop Kolom yang tidak digunakan
+Disini kita akan menghapus kolom Volume dan Adj Close karena kita tidak memerlukan kedua kolom tersebut.
+
+### Normalisasi Data
+Melakukan normalisasi data agar data lebih mudah diproses oleh model machine learning, pada kali ini saya menggunakan MinMaxScaler. MinMaxScaler berfungsi untuk mentransformasi kedalam bentuk 0 hingga 1.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+
+Model yang akan digunakan proyek kali ini yaitu Gradient Boosting, K-Nearest Neighbors, dan Random Forest.
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
