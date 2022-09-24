@@ -72,7 +72,7 @@ Univariate Analysis dan Multivariate Analysis
 - Menangani Outlier
 <br>Berikut adalah data numerik jika divisualisasikan, hanya Volume yang memiliki outlier.
 <image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/iqr1.png" width=600/>
- Dan berikut adalah data numerik jika divisualisasikan, jika sudah menggunakan metode IQR yaitu dengan menghapus data yang berada diluar IQR yaitu antara 35% dan 85%. Setelah menggunakan metode tersebut, didapatkan sampel data sebanyak 4123 dan 6 kolom dan berikut adalah gambarnya.
+ Dan berikut adalah data numerik jika divisualisasikan, jika sudah menggunakan metode IQR yaitu dengan menghapus data yang berada diluar IQR yaitu antara 25% dan 75%. Setelah menggunakan metode tersebut, didapatkan sampel data sebanyak 3848 dan 6 kolom dan berikut adalah gambarnya.
 <br>
 <image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/iqr2.png" width=600/>
 <br>
@@ -99,7 +99,7 @@ Berikut ini adalah tahapan dalam menyiapkan data sebelum melakukan modeling :
 Pada kasus saya, saya tidak memiliki missing value, namun kita dapat mengatasi missing value ini dengan menghapus value tersebut
 
 ### Membagi Dataset
-Kita bisa membagi dataset menjadi dua yaitu train data dan test data, train data digunakan sebagai training model dan test data digunakan sebagai validasi apakah model tersebut sudah akurat atau belum akurat. Rasio yang saya gunakan pada proyek ini adalah 8:2, 8 adalah train data dan 2 adalah test data. Dengan pembagian tersebut didapatkan jumlah sampel train data yaitu 3298 sampel dan sampel test data yaitu 825 sampel dengan total data yang digunakan adalah 4123. Untuk melakukan splitting data kita bisa menggunakan library train_test_split dari scikit-learn.
+Kita bisa membagi dataset menjadi dua yaitu train data dan test data, train data digunakan sebagai training model dan test data digunakan sebagai validasi apakah model tersebut sudah akurat atau belum akurat. Rasio yang saya gunakan pada proyek ini adalah 8:2, 8 adalah train data dan 2 adalah test data. Dengan pembagian tersebut didapatkan jumlah sampel train data yaitu 3078 sampel dan sampel test data yaitu 770 sampel dengan total data yang digunakan adalah 3848. Untuk melakukan splitting data kita bisa menggunakan library train_test_split dari scikit-learn.
 
 ### Menghapus atau Mengdrop Kolom yang tidak digunakan
 Disini kita akan menghapus kolom Volume dan Adj Close karena kita tidak memerlukan kedua kolom tersebut.
@@ -147,7 +147,7 @@ Random Forest adalah sebuah algoritma pada machine learning yang bekerja menggun
   - Kompleksitas yang tinggi
   - Waktu pemrosesan yang lama
 
-Berdasarkan uraian di atas serta pada saat proses modeling dan evaluasi, menurut saya kedua algoritma bekerja dengan cukup baik dalam memprediksi adalah model K-Nearest Neighbors. Hal ini dapat di lihat dari nilai akurasi yang cukup tinggi dibandingkan dengan kedua model yang lain.
+Berdasarkan uraian di atas serta pada saat proses modeling dan evaluasi, menurut saya kedua algoritma bekerja dengan cukup baik dalam memprediksi adalah model Gradient Boosting. Hal ini dapat di lihat dari nilai akurasi yang cukup tinggi dibandingkan dengan kedua model yang lain.
 
 ## Evaluation
 
