@@ -111,17 +111,53 @@ Melakukan normalisasi data agar data lebih mudah diproses oleh model machine lea
 
 Model yang akan digunakan proyek kali ini yaitu Gradient Boosting, K-Nearest Neighbors, dan Random Forest.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+### Gradient Boosting
+Gradient Boosting adalah sebuah algoritma pada machine learning yang menggunakan teknik ensembel learning dari decision tree untuk meprediksi nilai. Gradient Boostring mampu menangani data dan pattern yang kompleks. Untuk parameter yang digunakan pada model ini ada 3 yaitu:
+  - learning_rate
+  - n_estimators
+  - criterion
+
+#### Kelebihan
+  - Hasil pemodelan lebih akurat
+  - Stabil
+#### Kekurangan
+  - Waktu pemrosesan yang cukup lama
+  - Tingkat kesulitan yang tinggi dalam pemilihan model
+
+### K-Nearest Neighbors
+K-Nearest Neighbors adalah sebuah algoritma pada machine learning yang bekerja dengan mengklasifikasikan data baru menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam sebuah set pelatihan. Untuk parameter yang digunakan pada model ini ada 1 yaitu :
+  - n_neighbors
+
+#### Kelebihan
+  - Mudah diimplementasikan
+  - Efektif terhadap data yang besar
+#### Kekurangan
+  - Perlu menentukan nilai parameter K
+  - Rentan terhadap variabel yang tidak informatif
+
+### Random Forest
+Random Forest adalah sebuah algoritma pada machine learning yang bekerja menggunakan teknik ensembel learning untuk memprediksi suatu nilai. Random Forest dapat bekerja secara bersamaan dalam satu waktu, sehingga tingkat keberhasilan menjadi lebih tinggi. Untuk parameter yang digunakan pada model ini ada 2 yaitu :
+  - n_estimators
+  - criterion
+
+#### Kelebihan
+  - Dapat mengatasi training data yang besar secara efisien
+  - Dapat menangani missing values
+#### Kekurangan
+  - Kompleksitas yang tinggi
+  - Waktu pemrosesan yang lama
+
+Berdasarkan uraian di atas serta pada saat proses modeling dan evaluasi, menurut saya kedua algoritma bekerja dengan cukup baik dalam memprediksi adalah model K-Nearest Neighbors. Hal ini dapat di lihat dari nilai akurasi yang cukup tinggi dibandingkan dengan kedua model yang lain.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+Untuk evaluasi pada machine learning model ini, metrik yang saya gunakan adalah mean squared error (mse). Dimana metrik ini menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
+
+<image src="https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-50d568506216f6ab6402504298c570e2_l3.svg" width=500 />
+<br>
+
+Berikut adalah hasil akurasi dari beberapa model yang dipakai :
+
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
