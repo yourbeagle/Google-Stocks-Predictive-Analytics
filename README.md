@@ -157,16 +157,11 @@ Untuk evaluasi pada machine learning model ini, metrik yang saya gunakan adalah 
 <br>
 
 Berikut adalah hasil akurasi dari beberapa model yang dipakai :
+<br>
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/modeltrain.png" width=600/>
+<br>
+<image src="https://github.com/yourbeagle/Google-Stocks-Predictive-Analytics/blob/master/images/modelacc.png" width=600/>
+<br>
 
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Dapat Dilihat dari gambar di atas semua model bekerja secara optimal namun secara akurasi model Gradient Boosting yang memiliki akurasi paling tinggi, disusul oleh Random Forest dan yang terakhir adalah K-Nearest Neighbors. Terdapat selisih yang sangat kecil diantara 2 model yaitu Gradient Boosting dan Random Forest, namun model Gradient Boosting memiliki nilai yang lebih tinggi.
 
